@@ -19,4 +19,4 @@ jobs:
       - name: Act on the command
         run: |
           echo "The command was '${{ steps.command.outputs.command-name }}' with arguments '${{ steps.command.outputs.command-arguments }}'"
-          echo "Gihub ref: {{github.ref}}"
+          echo "Gihub ref: ${{ github.ref }}"
