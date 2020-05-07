@@ -8,11 +8,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Commit from bash
       run: |
-          echo "Roller was here" > test.txt
+          echo "Roller was here ${{ github.run_number }}" > test.txt
     - name: Commit changes
       uses: EndBug/add-and-commit@v4
       with:
         message: "Your commit message"
         add: "*.txt"
       env:
-        GITHUB_TOKEN: ${{ secrets.PR_UPDATER_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.AMGITBOT_PAT }}
