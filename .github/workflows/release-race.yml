@@ -1,12 +1,9 @@
 on:
   - push
 jobs:
-  realease-race:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-18.04 ]
-    name: Demonstrates only one host will release
+  realease:
+    runs-on: ubuntu-18.04
+    name: Release if Semantic Commits
     steps:
       - name: Checkout
         uses: actions/checkout@v2
