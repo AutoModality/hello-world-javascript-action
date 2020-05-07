@@ -9,10 +9,13 @@ jobs:
     - name: Commit from bash
       run: |
           echo "Roller was here ${{ github.run_number }}" > test.txt
+    - name: Export commit message
+      run: echo ::set-env name=COMMIT_MESSAGE::"Roller was here ${{ github.run_number }}"
     - name: Commit changes
       uses: EndBug/add-and-commit@v4
       with:
-        message: "Your commit message"
+        message: "${{ env.COMMIT_MESSAGE }}"
         add: "*.txt"
       env:
         GITHUB_TOKEN: ${{ secrets.AMGITBOT_PAT }}
+
