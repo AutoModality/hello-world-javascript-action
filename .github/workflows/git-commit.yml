@@ -9,9 +9,10 @@ jobs:
     - name: Commit from bash
       run: |
           echo "Roller was here" > test.txt
-    - uses: matheusalbino/git-commit@v1.0.1
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v4
       with:
-        user-name: Bot
-        user-email: dev@automodality.com
-        message: This a commit from Github Actions
-        github-token: ${{ secrets.PR_UPDATER_TOKEN }}
+        message: "Your commit message"
+        add: "*.txt"
+      env:
+        GITHUB_TOKEN: ${{ secrets.PR_UPDATER_TOKEN }}
