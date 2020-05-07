@@ -12,4 +12,4 @@ jobs:
         token: ${{ secrets.PR_UPDATER_TOKEN }}
         repository: AutoModality/action-hello-world-docker
         event-type: release
-        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "new_release_version": "1.2.3", "new_release_notes": "Dispatching release notes AM-246"}'
+        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "new_release_version": "1.2.3", "new_release_notes": "Dispatching release notes AM-246", "new_release_major_version": "major", "new_release_minor_version":"minor","new_release_patch_version":"patch"}'
