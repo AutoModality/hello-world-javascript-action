@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Testing commit
     steps:
+    - uses: actions/checkout@v2
     - name: Commit from bash
       run: |
           echo "Roller was here" > test.txt
