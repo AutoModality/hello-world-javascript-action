@@ -6,9 +6,10 @@ jobs:
     name: Dispatch event
 
     steps:
-    - uses: juztcode/repo-ditpatch-action@v1
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1
       with:
-        event-type: opened
         token: ${{ secrets.PR_UPDATER_TOKEN }}
         repository: AutoModality/action-hello-world-docker
-        
+        event-type: my-event
+        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
