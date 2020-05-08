@@ -14,5 +14,5 @@ jobs:
           obj={}
           obj["a"]="Something"
           obj["b"]=1
-          obj["c"]=true
+          obj["c"]=True
           print(json.dumps(obj))
