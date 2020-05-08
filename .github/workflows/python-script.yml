@@ -1,0 +1,18 @@
+on:
+  - push
+defaults:
+  run: 
+    shell: python
+jobs:
+  python-script:
+    runs-on: ubuntu-latest
+    name: Demonstrates a Python Script running
+    steps:
+      - run: |
+          import json
+
+          obj={}
+          obj["a"]="Something"
+          obj["b"]=1
+          obj["c"]=true
+          print(json.dumps(obj))
